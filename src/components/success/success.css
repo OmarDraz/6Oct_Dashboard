@@ -1,0 +1,12 @@
+.success{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 15px;
+    background-color: var(--main-color);
+    width: 250px;
+    height: 50px;
+    padding: 15px;
+    border-radius: 16px;
+}
