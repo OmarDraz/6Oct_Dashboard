@@ -1,0 +1,105 @@
+.icon-button{
+    border-radius: 4px;
+    font-size: 16px;
+    padding: 2px;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 1px 0px 8px 0px #0000008f;
+    transition: 0.7s
+}
+
+.icon-button:hover{
+    box-shadow: 1px 0px 16px 0px #0000008f
+}
+
+.iconBtnLabel{
+    cursor: default;
+}
+
+.icon-button-red{
+    color: red
+}
+
+.icon-button-primary{
+    color: var(--secondary-color);
+    background-color: white;
+    border: 1px solid var(--secondary-color);
+}
+
+.icon-button-secondary{
+    color: white;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+.icon-button-circled-large-primary{
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: white
+}
+
+.icon-button-circled-large-secondary{
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: white
+}
+
+.icon-button-circled-large-red{
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    background-color: red;
+    color: var(--white)
+}
+
+.icon-button-circled-large-orange{
+    width: 60px !important;
+    height: 60px !important;
+    border-radius: 50%;
+    background-color: #E7A600;
+    color: var(--white)
+}
+
+.icon-button-circled-medium-primary{
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: var(--main-color);
+    color: var(--white)
+}
+
+.icon-button-circled-medium-secondary{
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--white)
+}
+
+.icon-button-circled-medium-red{
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: red;
+    color: var(--white)
+}
+
+.icon-button-circled-medium-orange{
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50%;
+    background-color: #E7A600;
+    color: var(--white)
+}
+
+.float{
+    position: fixed;
+    bottom: 53px;
+    right: 72px
+}

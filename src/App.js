@@ -6,6 +6,8 @@ import Menu from './pages/Menu/Menu';
 import Users from './pages/Users';
 import pattern from './assets/imgs/pattern.png'
 import AddProduct from './pages/Menu/AddProduct';
+import AddCategory from './pages/Menu/AddCategory';
+import Categories from './pages/Menu/Categories';
 function App() {
 
   return (
@@ -19,6 +21,8 @@ function App() {
             <Route path="/" end element={<Home />} />
             <Route path='/menu' end element={<Menu />}/>
             <Route path='menu/add_product' end element={<AddProduct />} />
+            <Route path='menu/add_category' end element={<AddCategory />} />
+            <Route path='menu/categories' end element={<Categories />} />
             <Route path='/users' end element={<Users />} />
             <Route path='/attendance' end element={<Attendance />} />
           </Routes>
