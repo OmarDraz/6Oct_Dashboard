@@ -16,7 +16,7 @@ const Categories = () => {
             {
                 categories.map((cat) => (
                     <div className="col-3 col-sm-12 card">
-                        <img src={cat.image} />
+                        <img alt="Category" src={cat.image} />
                         <div style={{ padding: 10 }} className="flex__between">
                             <h4>{cat.ar_name}</h4>
                             <h4>{cat.en_name}</h4>
