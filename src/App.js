@@ -4,16 +4,13 @@ import RegisterForm from './pages/RegisterForm';
 import DashboardRoutes from './DashboardRoutes';
 import { Login } from './pages/Login';
 import { useEffect } from 'react';
-import Cookies from 'js-cookie'
-import {useNavigate} from 'react-router-dom'
+import Cookie from 'js-cookie'
 function App() {
-  const navigate = useNavigate()
   useEffect(() => {
-    if(!Cookies.get('name'))
-    {
-      navigate('/')
+    if(!Cookie.get('name') && window.location.href !== 'http://localhost:3000/login'){
+      window.location.href = "/login"
     }
-  },[navigate])
+  },[])
   return (
     <>
     <img alt="pattern" src={pattern} className="pattern" />
