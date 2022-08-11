@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import Cookie from 'js-cookie'
 function App() {
   useEffect(() => {
-    if(!Cookie.get('name') && window.location.href !== 'http://localhost:3000/login'){
+    if(!Cookie.get('name') && window.location.href !== 'https://main--sweet-semolina-ec5c51.netlify.app/login'){
       window.location.href = "/login"
     }
   },[])
