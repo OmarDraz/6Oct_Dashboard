@@ -6,11 +6,11 @@ import { Login } from './pages/Login';
 import { useEffect } from 'react';
 import Cookie from 'js-cookie'
 function App() {
-  useEffect(() => {
-    if(!Cookie.get('name') && window.location.href !== 'https://main--sweet-semolina-ec5c51.netlify.app/login'){
-      window.location.href = "/login"
-    }
-  },[])
+  // useEffect(() => {
+  //   if(!Cookie.get('name') && window.location.href !== 'http://localhost:3000/login'){
+  //     window.location.href = "/login"
+  //   }
+  // },[])
   return (
     <>
     <img alt="pattern" src={pattern} className="pattern" />
