@@ -6,12 +6,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    box-shadow: 1px 0px 8px 0px #0000008f;
-    transition: 0.7s
+    /* box-shadow: 1px 0px 8px 0px #0000008f; */
+    transition: 0.3s
 }
 
 .icon-button:hover{
-    box-shadow: 1px 0px 16px 0px #0000008f
+    box-shadow: 1px 0px 6px 0px #0000008f
 }
 
 .iconBtnLabel{

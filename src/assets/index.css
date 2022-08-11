@@ -3,7 +3,8 @@
 :root{
     --main-color: #EBE0C7;
     --logo-color: #102E4F;
-    --secondary-color: #AA986F
+    --secondary-color: #AA986F;
+    --box-shadow-panels: 4px 0px 16px 0px rgba(0, 0, 0, 0.15);
 }
 
 body {
@@ -11,6 +12,7 @@ body {
     color: var(--logo-color);
     overflow-x: hidden;
     /* background: url(./imgs/pattern.png) center center no-repeat; */
+    /* background-color: var(--secondary-color) */
 }
 
 * {
@@ -67,7 +69,7 @@ a{
     margin-left: 16px
 }
 
-input[type=text], input[type=number]{
+input[type=text], input[type=number], input[type=password], select{
     border-radius: 16px;
     height: 40px;
     border: 1px solid #aa986f85;
@@ -75,6 +77,11 @@ input[type=text], input[type=number]{
 }
 
 input[type=text]:focus{
+    border: 1px solid #aa986f85;
+    outline: none
+}
+
+input[type=password]:focus{
     border: 1px solid #aa986f85;
     outline: none
 }
@@ -101,13 +108,19 @@ textarea {
     align-items: center
 }
 
+.flex__center {
+    display: flex;
+    justify-content: center;
+    align-items: center
+}
+
+
 .card{
-    width: 220px;
     display: flex;
     flex-direction: column;
     background: white;
     border-radius: 16px 16px 0 0;
-    box-shadow: 4px 0px 16px 0px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow-panels);
     position: relative
 }
 
@@ -130,4 +143,29 @@ textarea {
 
 .card img {
     border-radius: 16px 16px 0 0;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #aa986f72!important;
+}
+
+th {
+    border-bottom: 1px solid #aa986f72!important;
+    padding: 10px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 16px 0px;
+}
+
+.form-box{
+    box-shadow: var(--box-shadow-panels);
+    padding: 20px;
+    background-color: white;
+    width: 50%;
+    border-radius: 16px
 }

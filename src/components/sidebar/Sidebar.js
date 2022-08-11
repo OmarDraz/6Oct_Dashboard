@@ -35,7 +35,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(true)
   return (
     <div className="main-container">
-        <motion.div transition={{ duration: 0.8 }} animate={{ width: isOpen ? 300 : 45 }} className="sidebar">
+        <motion.div transition={{ duration: 0.8 }} animate={{ width: isOpen ? 300 : 45}} className="sidebar">
           <motion.div transition={{ duration: 0.8 }} animate={{ x: isOpen ? 0 : 200 }} className="logo">
             <img alt="logo" src={logo} />
           </motion.div>
@@ -50,7 +50,7 @@ const Sidebar = () => {
             }
           </motion.section>
         </motion.div>
-        <motion.div className='rotateIcon' transition={{ duration: 0.5 }} animate={{ rotate: isOpen ? 0 : 180 }}>
+        <motion.div className='rotateIcon' transition={{ duration: 0.8 }} animate={{ rotate: isOpen ? 0 : 180, marginRight: isOpen ? 330 :75 }}>
         <MdOutlineArrowForwardIos style={{ color: 'var(--secondary-color)', cursor: 'pointer' }} onClick={() => setIsOpen(!isOpen)} />
         </motion.div>
     </div>

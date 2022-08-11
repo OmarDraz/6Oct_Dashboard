@@ -8,26 +8,21 @@ import pattern from './assets/imgs/pattern.png'
 import AddProduct from './pages/Menu/AddProduct';
 import AddCategory from './pages/Menu/AddCategory';
 import Categories from './pages/Menu/Categories';
+import RegisterForm from './pages/RegisterForm';
+import DashboardRoutes from './DashboardRoutes';
+import { Login } from './pages/Login';
 function App() {
 
   return (
     <>
     <img alt="pattern" src={pattern} className="pattern" />
       <Router>
-        <div style={{ display: 'flex' }}>
-          <Sidebar/>
-          <div style={{  width: '100%', margin: '50px 50px' }}>
-          <Routes>
-            <Route path="/" end element={<Home />} />
-            <Route path='/menu' end element={<Menu />}/>
-            <Route path='menu/add_product' end element={<AddProduct />} />
-            <Route path='menu/add_category' end element={<AddCategory />} />
-            <Route path='menu/categories' end element={<Categories />} />
-            <Route path='/users' end element={<Users />} />
-            <Route path='/attendance' end element={<Attendance />} />
-          </Routes>
-          </div>
-        </div>
+
+        <Routes>
+          <Route path="/*" end element={<DashboardRoutes />} />
+          <Route path="/login" end element={<Login />} />
+          <Route path="/register" end element={<RegisterForm />} />
+        </Routes>
       </Router>
     </>
   );
