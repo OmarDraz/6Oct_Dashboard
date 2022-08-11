@@ -46,7 +46,7 @@ useEffect(() => {
       </motion.div>
       <Modal toggle={welcomeModal} setToggle={setWelcomeModal}>
         <div className='flex__center' style={{ flexDirection: 'column' }}>
-          <img width="200" alt="celebrate" src={celebrate} />
+          <img alt="celebrate" width="200" src={celebrate} />
           <h1>مرحبا <span style={{ color: 'var(--secondary-color)' }}>{selected.name}!</span></h1>
           <h1>في</h1>
           <img alt="logo" src={logo} />
