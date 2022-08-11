@@ -34,7 +34,7 @@ export const Login = () => {
         }  else if (Cookies.get('name') && Cookies.get('role') === 'waiter'){
             navigate('/attendance')
         }
-    }, [])
+    }, [navigate])
   return (
     <div className="flex__center" style={{ height: '100vh', backgroundColor: 'rgb(170 152 111 / 50%)'}}>
         <motion.form onSubmit={onSubmit} className="form-box flex__center flex__column" style={{ flexDirection: 'column' }}>

@@ -24,7 +24,7 @@ useEffect(() => {
     setAttendees([...attendees, data])
     console.log(data)
   })
-},[socket, attendees])
+},[ attendees, notificationSplay])
 
   return (
     <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: .3 }} exit={{ opacity: 0 }}>
@@ -46,10 +46,10 @@ useEffect(() => {
       </motion.div>
       <Modal toggle={welcomeModal} setToggle={setWelcomeModal}>
         <div className='flex__center' style={{ flexDirection: 'column' }}>
-          <img width="200" src={celebrate} />
+          <img width="200" alt="celebrate" src={celebrate} />
           <h1>مرحبا <span style={{ color: 'var(--secondary-color)' }}>{selected.name}!</span></h1>
           <h1>في</h1>
-          <img src={logo} />
+          <img alt="logo" src={logo} />
           <br />
           <br />
         </div>

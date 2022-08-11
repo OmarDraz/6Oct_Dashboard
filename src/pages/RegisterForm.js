@@ -24,7 +24,7 @@ const RegisterForm = () => {
         socket.on('message', ({name, phone}) => {
             setMessages([...messages, {name, phone}])
         })
-    },[])
+    },[messages, socket])
 
     const onSubmit = (e) => {
         e.preventDefault();
@@ -47,17 +47,12 @@ const RegisterForm = () => {
             </div>
             <div className="form-group">
                 <input required type="checkbox" name='policy' onChange={handleChange}  id="name" /> &nbsp;
-                <label for="name">الموافقة على <a href="#" style={{ textDecoration: 'underline' }}>سياسة المكان</a></label> &nbsp;
+                <label for="name">الموافقة على <a href="/" style={{ textDecoration: 'underline' }}>سياسة المكان</a></label> &nbsp;
             </div>
             <div style={{ marginTop: 'auto' }}>
                 <Button text="سجل دخول العميل" type="submit" />
             </div>
         </motion.form>
-        {
-            messages.map((msg) => {
-                <p>{msg.name}</p>
-            })
-        }
     </div>
   )
 }
