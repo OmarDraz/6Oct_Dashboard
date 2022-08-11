@@ -3,8 +3,8 @@ import pattern from './assets/imgs/pattern.png'
 import RegisterForm from './pages/RegisterForm';
 import DashboardRoutes from './DashboardRoutes';
 import { Login } from './pages/Login';
-import { useEffect } from 'react';
-import Cookie from 'js-cookie'
+// import { useEffect } from 'react';
+// import Cookie from 'js-cookie'
 function App() {
   // useEffect(() => {
   //   if(!Cookie.get('name') && window.location.href !== 'http://localhost:3000/login'){
