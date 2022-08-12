@@ -111,11 +111,11 @@ const AddProduct = () => {
         <div className="col-6 col-sm-12">
             <div className="form-group">
                 <label style={{ display: 'block' }} for="name">وصف المنتج ( بالعربي )</label> &nbsp;
-                <textarea cols="50" name="ar_description" onChange={handleChange} value={product.ar_description} rows="10"></textarea>
+                <textarea cols="30" name="ar_description" onChange={handleChange} value={product.ar_description} rows="10"></textarea>
             </div>
             <div className="form-group">
                 <label style={{ display: 'block' }} for="name">وصف المنتج ( بالانجليزي )</label> &nbsp;
-                <textarea cols="50" name="en_description" onChange={handleChange} value={product.en_description} rows="10"></textarea>
+                <textarea cols="30" name="en_description" onChange={handleChange} value={product.en_description} rows="10"></textarea>
             </div>
         </div>
         <div style={{ marginTop: 'auto' }}>
