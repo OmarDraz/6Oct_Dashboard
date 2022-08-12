@@ -7,11 +7,11 @@ import { useEffect } from 'react';
 import Cookie from 'js-cookie'
 import Logout from './components/logout';
 function App() {
-  useEffect(() => {
-    if(!Cookie.get('name') && window.location.href !== 'http://localhost:3006/login'){
-      window.location.href = "/login"
-    }
-  },[])
+  // useEffect(() => {
+  //   if(!Cookie.get('name') && window.location.href !== 'http://localhost:3006/login'){
+  //     window.location.href = "/login"
+  //   }
+  // },[])
   return (
     <>
     <img alt="pattern" src={pattern} className="pattern" />
