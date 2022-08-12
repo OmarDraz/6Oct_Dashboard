@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import logo from '../assets/imgs/logo.svg'
 import Button from '../components/button/Button'
 import io from 'socket.io-client'
+import {BsDoorOpenFill} from 'react-icons/bs'
 
 
 const RegisterForm = () => {
@@ -32,6 +33,7 @@ const RegisterForm = () => {
     }
   return (
     <div className="flex__center" style={{ height: '100vh', backgroundColor: 'rgb(170 152 111 / 50%)'}}>
+        <a style={{ position: 'absolute', top: 0, right: 0, margin: 10, textDecoration: 'underline' }} href="/logout"><span><BsDoorOpenFill /></span>&nbsp;تسجيل خروج</a>
         <motion.form onSubmit={onSubmit} className="form-box flex__center flex__column" style={{ flexDirection: 'column' }}>
             <motion.div transition={{ duration: 0.8 }} initial={{ y: -10 }} animate={{ y: 0 }}>
                 <img alt="logo" src={logo} />

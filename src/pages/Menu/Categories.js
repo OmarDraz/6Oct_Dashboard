@@ -7,8 +7,11 @@ import Modal from '../../components/modal/Modal'
 import {MdCancel, MdCheckCircle} from 'react-icons/md'
 import axios from 'axios'
 import Button from '../../components/button/Button'
+import {BsCardList} from 'react-icons/bs'
+import { useNavigate } from 'react-router-dom'
 
 const Categories = () => {
+  const navigate = useNavigate()
   const [categories, setCategories] = useState([])
   const [deleteModal, setDeleteModal] = useState(false)
   const [editModal, setEditModal] = useState(false)
@@ -92,7 +95,10 @@ const Categories = () => {
                                     en_name: cat.en_name,
                                     id: cat.id,
                                 })
-                            }} icon_color="primary" icon={<MdDelete />} />
+                            }} icon_color="primary" icon={<MdDelete />} /> &nbsp;&nbsp;&nbsp;
+                            <IconButton icon_color="secondary" icon={<BsCardList />} onclick={() => {
+                                navigate(`/menu/products/category/${cat.id}`)
+                            }} />
                         </div>
                     </div>
                 ))

@@ -8,6 +8,8 @@ import Users from './pages/Users';
 import AddProduct from './pages/Menu/AddProduct';
 import AddCategory from './pages/Menu/AddCategory';
 import Categories from './pages/Menu/Categories';
+import Products from './pages/Menu/Products';
+import EditProduct from './pages/Menu/EditProduct';
 
 const DashboardRoutes = () => {
   return (
@@ -19,8 +21,10 @@ const DashboardRoutes = () => {
         <Route path="/" end element={<Home />} />
         <Route path='menu' end element={<Menu />}/>
         <Route path='menu/add_product' end element={<AddProduct />} />
+        <Route path='menu/edit_product/:id' end element={<EditProduct />} />
         <Route path='menu/add_category' end element={<AddCategory />} />
         <Route path='menu/categories' end element={<Categories />} />
+        <Route path='menu/products/category/:id' end element={<Products />} />
         <Route path='/users' end element={<Users />} />
         <Route path='/attendance' end element={<Attendance />} />
         </Routes>

@@ -11,10 +11,13 @@ export const Login = () => {
         phone: '',
         password: ''
     })
+
     const handleChange = (e) => {
         const {name, value} = e.target
         setLogin({...login, [name]: value})
     }
+
+    const [validation, setValidation] = useState('')
     const onSubmit = (e) => {
         e.preventDefault();
         axiosInstance.post('users/login', login).then((res) => {
@@ -22,6 +25,8 @@ export const Login = () => {
                 Cookies.set("name", `${res.data.data.first_name} ${res.data.last_name}`);
                 Cookies.set("role", res.data.data.role);
                 navigate('/')
+            } else {
+                setValidation(res.data.message)
             }
         })
     }
@@ -42,6 +47,11 @@ export const Login = () => {
                 <img alt="logo" src={logo} />
             </motion.div>
             <motion.h3>تسجيل الدخول</motion.h3>
+            {
+                validation && (
+                    <motion.h4 style={{ color: 'red' }} initial={{ y: -10 }} animate={{ y: 0 }}>{validation}</motion.h4>
+                )
+            }
             <div className="form-group">
                 <label for="name">رقم الهاتف</label> &nbsp;
                 <input required type="text" value={login.phone} name="phone" onChange={handleChange}  id="phone" />
@@ -50,7 +60,7 @@ export const Login = () => {
                 <label for="name">كلمة السر</label> &nbsp;
                 <input required type="password" value={login.password} name='password' onChange={handleChange}  id="password" />
             </div>
-            <div style={{ marginTop: 'auto' }}>
+            <div style={{ marginTop: '10px' }}>
                 <Button text="تسجيل الدخول" type="submit" />
             </div>
         </motion.form>
