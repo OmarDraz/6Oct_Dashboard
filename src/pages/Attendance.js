@@ -36,6 +36,7 @@ useEffect(() => {
       <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>الحاضرين</motion.h3>
       <motion.div initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: .5 }}  className='row'>
         {
+          attendees.length > 0 ?
           attendees.map((a) => (
           <div style={{ flexDirection: 'column' }} onClick={() => {
             setWelcomeModal(true)
@@ -46,6 +47,7 @@ useEffect(() => {
           }} className='box col-3 col-sm-12'>
             <div>{a.name}</div>
             <div>{a.phone}</div>
+            <div>الاشخاص : {a.persons}</div>
             <div style={{ position: 'absolute', left: 10, top: 5, zIndex: 99 }} onClick={(e) => {
               e.stopPropagation();
               axiosInstance.delete(`statistics/${a.id}}`).then(() => {
@@ -55,6 +57,10 @@ useEffect(() => {
               }><MdCancel /></div>
           </div>
           ))
+          :
+          <motion.div transition={{ delay: 0.8 }} initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} style={{ width: '100%', height: '70vh' }} className="flex__center">
+          <p>لا يوجد حضور اليوم حتى الان</p>
+      </motion.div>
         }
       </motion.div>
       <Modal toggle={welcomeModal} setToggle={setWelcomeModal}>

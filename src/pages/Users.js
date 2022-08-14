@@ -66,7 +66,7 @@ const Users = () => {
         <Tbody>
           {
             users.map(user => (
-              <Tr>
+              <motion.Tr initial={{ opacity: 0.2, y: 20 }} animate={{ opacity: 1, y: 0 }}>
                 <Td>{user.first_name} {user.last_name}</Td>
                 <Td>{user.phone}</Td>
                 <Td align="center">{user.role}</Td>
@@ -91,7 +91,7 @@ const Users = () => {
                     }} icon_color="primary" icon={<MdDelete />} />
                   </div>
                 </Td>
-              </Tr>
+              </motion.Tr>
             ))
           }
         </Tbody>

@@ -27,6 +27,7 @@ const Products = () => {
         <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>المنتجات</motion.h3>
         <div className="row">
             {
+                products.length > 0 ?
                 products.map((pro) => (
                     <div className="col-3 col-sm-12 card">
                         <img alt="Product" src={pro.image} />
@@ -49,6 +50,10 @@ const Products = () => {
                         </div>
                     </div>
                 ))
+                :
+                <motion.div transition={{ delay: 0.8 }} initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} style={{ width: '100%', height: '70vh' }} className="flex__center">
+                <p>لا يوجد منتجات في هذا الصنف متاحة حاليا</p>
+            </motion.div>
             }
         </div>
         <Modal setToggle={setDeleteModal} toggle={deleteModal} title={`حذف المنتج ( ${selected.ar_name} )`}>

@@ -9,7 +9,8 @@ import {BsDoorOpenFill} from 'react-icons/bs'
 const RegisterForm = () => {
     const [client, setClient] = useState({
         name: '',
-        phone: ''
+        phone: '',
+        persons: ''
     })
 
     const [messages, setMessages] = useState([])
@@ -22,8 +23,8 @@ const RegisterForm = () => {
     }
 
     useEffect(() => {
-        socket.on('message', ({name, phone}) => {
-            setMessages([...messages, {name, phone}])
+        socket.on('message', ({name, phone, persons}) => {
+            setMessages([...messages, {name, phone, persons}])
         })
     },[messages, socket])
 
@@ -40,12 +41,16 @@ const RegisterForm = () => {
             </motion.div>
             <motion.h3>تسجيل وصول العميل</motion.h3>
             <div className="form-group">
-                <label for="name">اسم العميل</label> &nbsp;
+                <label for="name">الاسم</label> &nbsp;
                 <input required type="text" value={client.name} name="name" onChange={handleChange}  id="name" />
             </div>
             <div className="form-group">
-                <label for="name">هاتف العميل</label> &nbsp;
+                <label for="name">الهاتف</label> &nbsp;
                 <input required type="text" value={client.phone} name='phone' onChange={handleChange}  id="phone" />
+            </div>
+            <div className="form-group">
+                <label for="name">الاشخاص</label> &nbsp;
+                <input required type="text" value={client.persons} name='persons' onChange={handleChange}  id="phone" />
             </div>
             <div className="form-group">
                 <input required type="checkbox" name='policy' onChange={handleChange}  id="name" /> &nbsp;

@@ -62,8 +62,9 @@ const Categories = () => {
   return (
     <div>
         <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>الاصناف</motion.h3>
-        <div className="row">
+        <motion.div initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className="row">
             {
+                categories.length > 0 ?
                 categories.map((cat) => (
                     <div className="col-3 col-sm-12 card">
                         <img alt="Category" src={cat.image} />
@@ -102,8 +103,12 @@ const Categories = () => {
                         </div>
                     </div>
                 ))
+                :
+                <motion.div transition={{ delay: 0.8 }} initial={{ y: -10, opacity: 0 }} animate={{ y: 0, opacity: 1 }} style={{ width: '100%', height: '70vh' }} className="flex__center">
+                    <p>لا يوجد اصناف متاحة حاليا</p>
+                </motion.div>
             }
-        </div>
+        </motion.div>
         <Modal setToggle={setDeleteModal} toggle={deleteModal} title={`حذف الصنف ( ${selected.ar_name} )`}>
             <div className="flex__center" style={{ flexDirection: 'column' }}>
                 <h3>هل انت متأكد من انك تريد حذف هذا الصنف ؟</h3>
@@ -134,7 +139,7 @@ const Categories = () => {
                         <input type="file" name="image" onChange={handleImage} id="name" />
                         {
                             selected.image && (
-                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split('http://127.0.0.1:3001/productsImages/')}</a></p>
+                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split('${process.env.HOST}/productsImages/')}</a></p>
                             )
                         }
                     </div>
