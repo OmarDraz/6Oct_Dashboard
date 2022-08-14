@@ -6,6 +6,7 @@ import { Login } from './pages/Login';
 import { useEffect } from 'react';
 import Cookie from 'js-cookie'
 import Logout from './components/logout';
+import Welcome from './pages/Welcome';
 function App() {
   useEffect(() => {
     if(!Cookie.get('name') && window.location.href !== 'http://localhost:3006/login'){
@@ -22,6 +23,7 @@ function App() {
           <Route path="/login" end element={<Login />} />
           <Route path="/logout" end element={<Logout />} />
           <Route path="/register" end element={<RegisterForm />} />
+          <Route path="/welcome" end element={<Welcome />} />
         </Routes>
       </Router>
     </>

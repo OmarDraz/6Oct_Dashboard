@@ -10,6 +10,7 @@ import AddCategory from './pages/Menu/AddCategory';
 import Categories from './pages/Menu/Categories';
 import Products from './pages/Menu/Products';
 import EditProduct from './pages/Menu/EditProduct';
+import WelcomeMedia from './pages/WelcomeMedia';
 
 const DashboardRoutes = () => {
   return (
@@ -27,6 +28,7 @@ const DashboardRoutes = () => {
         <Route path='menu/products/category/:id' end element={<Products />} />
         <Route path='/users' end element={<Users />} />
         <Route path='/attendance' end element={<Attendance />} />
+        <Route path="/welcome_media" end element={<WelcomeMedia />} />
         </Routes>
         </div>
     </div>

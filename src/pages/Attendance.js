@@ -4,14 +4,14 @@ import {motion} from 'framer-motion'
 import useSound from 'use-sound';
 import notificationSound from '../assets/audio/Notification.mp3'
 import Modal from '../components/modal/Modal';
-import celebrate from '../assets/celebrate.svg'
-import logo from '../assets/imgs/logo2.svg'
 import {MdCancel} from 'react-icons/md'
 import axiosInstance from '../axios';
+import { useNavigate } from 'react-router-dom'
 
 const socket = io.connect("http://localhost:3001")
 
 const Attendance = () => {
+  const navigate = useNavigate()
   const [attendees, setAttendees] = useState([])
   const [selected, setSelected] = useState({
     name: ''
@@ -44,6 +44,8 @@ useEffect(() => {
               name: a.name,
               id: a.id
             })
+            socket.emit('welcome', a.name)
+
           }} className='box col-3 col-sm-12'>
             <div>{a.name}</div>
             <div>{a.phone}</div>
@@ -64,14 +66,7 @@ useEffect(() => {
         }
       </motion.div>
       <Modal toggle={welcomeModal} setToggle={setWelcomeModal}>
-        <div className='flex__center' style={{ flexDirection: 'column' }}>
-          <img alt="celebrate" width="200" src={celebrate} />
-          <h1>مرحبا <span style={{ color: 'var(--secondary-color)' }}>{selected.name}!</span></h1>
-          <h1>في</h1>
-          <img alt="logo" src={logo} />
-          <br />
-          <br />
-        </div>
+
       </Modal>
     </motion.div>
   )

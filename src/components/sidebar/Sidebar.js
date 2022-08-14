@@ -8,7 +8,7 @@ import {HiUsers} from 'react-icons/hi'
 import {BsDoorOpenFill} from 'react-icons/bs'
 import logo from '../../assets/imgs/logo.svg'
 import {useNavigate} from 'react-router-dom'
-import {MdOutlineArrowForwardIos, MdEventSeat} from 'react-icons/md'
+import {MdOutlineArrowForwardIos, MdEventSeat, MdBackHand} from 'react-icons/md'
 const routes = [
   { 
     path: '/',
@@ -29,6 +29,11 @@ const routes = [
     path: '/attendance',
     name: 'الحاضرين',
     icon: <MdEventSeat />
+  },
+  {
+    path: '/welcome_media',
+    name: 'الترحيب',
+    icon: <MdBackHand />
   }
 ]
 
