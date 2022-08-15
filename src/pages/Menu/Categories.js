@@ -139,7 +139,7 @@ const Categories = () => {
                         <input type="file" name="image" onChange={handleImage} id="name" />
                         {
                             selected.image && (
-                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split('${process.env.HOST}/productsImages/')}</a></p>
+                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split('${process.env.HOST}/uploads/')}</a></p>
                             )
                         }
                     </div>

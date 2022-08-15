@@ -11,6 +11,7 @@ import Categories from './pages/Menu/Categories';
 import Products from './pages/Menu/Products';
 import EditProduct from './pages/Menu/EditProduct';
 import WelcomeMedia from './pages/WelcomeMedia';
+import Cookies from 'js-cookie';
 
 const DashboardRoutes = () => {
   return (
@@ -19,16 +20,21 @@ const DashboardRoutes = () => {
         <Sidebar/>
         <div style={{  width: '100%', margin: '50px 50px' }}>
         <Routes>
-        <Route path="/" end element={<Home />} />
-        <Route path='menu' end element={<Menu />}/>
-        <Route path='menu/add_product' end element={<AddProduct />} />
-        <Route path='menu/edit_product/:id' end element={<EditProduct />} />
-        <Route path='menu/add_category' end element={<AddCategory />} />
-        <Route path='menu/categories' end element={<Categories />} />
-        <Route path='menu/products/category/:id' end element={<Products />} />
-        <Route path='/users' end element={<Users />} />
+        {
+          Cookies.get('role') === 'admin' && 
+          <>
+            <Route path="/" end element={<Home />} />
+            <Route path='menu' end element={<Menu />}/>
+            <Route path='menu/add_product' end element={<AddProduct />} />
+            <Route path='menu/edit_product/:id' end element={<EditProduct />} />
+            <Route path='menu/add_category' end element={<AddCategory />} />
+            <Route path='menu/categories' end element={<Categories />} />
+            <Route path='menu/products/category/:id' end element={<Products />} />
+            <Route path='/users' end element={<Users />} />
+            <Route path="/welcome_media" end element={<WelcomeMedia />} />
+          </>
+        }
         <Route path='/attendance' end element={<Attendance />} />
-        <Route path="/welcome_media" end element={<WelcomeMedia />} />
         </Routes>
         </div>
     </div>

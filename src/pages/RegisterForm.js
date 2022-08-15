@@ -23,6 +23,7 @@ const RegisterForm = () => {
     }
 
     useEffect(() => {
+        document.title = "6ctober | Register Client"
         socket.on('message', ({name, phone, persons}) => {
             setMessages([...messages, {name, phone, persons}])
         })

@@ -24,7 +24,11 @@ export const Login = () => {
             if(res.data.status){
                 Cookies.set("name", `${res.data.data.first_name} ${res.data.last_name}`);
                 Cookies.set("role", res.data.data.role);
-                navigate('/')
+                if (res.data.data.role === 'res'){
+                    navigate('/register')
+                }  else if (res.data.data.role === 'waiter'){
+                    navigate('/attendance')
+                }
             } else {
                 setValidation(res.data.message)
             }
@@ -32,11 +36,12 @@ export const Login = () => {
     }
 
     useEffect(() => {
+        document.title = "6ctober | Login"
         if(Cookies.get('name')){
             navigate('/')
-        } else if (Cookies.get('name') && Cookies.get('role') === 'res'){
+        } else if (Cookies.get('role') === 'res'){
             navigate('/register')
-        }  else if (Cookies.get('name') && Cookies.get('role') === 'waiter'){
+        }  else if (Cookies.get('role') === 'waiter'){
             navigate('/attendance')
         }
     }, [navigate])

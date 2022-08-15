@@ -9,21 +9,25 @@ import {BsDoorOpenFill} from 'react-icons/bs'
 import logo from '../../assets/imgs/logo.svg'
 import {useNavigate} from 'react-router-dom'
 import {MdOutlineArrowForwardIos, MdEventSeat, MdBackHand} from 'react-icons/md'
+import Cookies from 'js-cookie'
 const routes = [
   { 
     path: '/',
     name: 'الرئيسية',
-    icon: <FaHome />
+    icon: <FaHome />,
+    hide: Cookies.get('role') === 'admin' ? false : true
   },
   {
     path: '/menu',
     name: 'القائمة',
-    icon: <IoIosCafe />
+    icon: <IoIosCafe />,
+    hide: Cookies.get('role') === 'admin' ? false : true
   },
   {
     path: '/users',
     name: 'المستخدمين',
-    icon: <HiUsers />
+    icon: <HiUsers />,
+    hide: Cookies.get('role') === 'admin' ? false : true
   },
   {
     path: '/attendance',
@@ -33,7 +37,8 @@ const routes = [
   {
     path: '/welcome_media',
     name: 'الترحيب',
-    icon: <MdBackHand />
+    icon: <MdBackHand />,
+    hide: Cookies.get('role') === 'admin' ? false : true
   }
 ]
 
@@ -47,25 +52,17 @@ const Sidebar = () => {
           <motion.div transition={{ duration: 0.8 }} animate={{ x: isOpen ? 0 : 200 }} className="logo">
             <img alt="logo" src={logo} />
           </motion.div>
-          <motion.section transition={{ duration: 0.8 }} animate={{ y: isOpen ? 0 : -143 }} className="routes">
+          <motion.section style={{ position: 'relative' }} transition={{ duration: 0.8 }} animate={{ y: isOpen ? 0 : -143 }} className="routes">
             {
               routes.map((route) => (
-                <NavLink to={route.path} key={route.name} className="nav_link">
+                <NavLink to={route.path} key={route.name} style={{ display: route.hide ? 'none' : '' }} className="nav_link">
                   <span>{route.icon}</span>
                     <motion.div transition={{ duration: 0.8 }} animate={{ opacity: isOpen ? 1 : 0 }} className="link_text">{route.name}</motion.div>
                 </NavLink>
               ))
             }
           </motion.section>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <div className="nav_link" onClick={() => navigate('/logout')} style={{  marginTop: 'auto', cursor: 'pointer' }}>
+          <div className="nav_link" onClick={() => navigate('/logout')} style={{  cursor: 'pointer', position: 'absolute', bottom: 0 }}>
               <span><BsDoorOpenFill /></span>
               <motion.div transition={{ duration: 0.8 }} animate={{ x: isOpen ? 0 : +300 }} className="link_text">تسجيل خروج</motion.div>
             </div>

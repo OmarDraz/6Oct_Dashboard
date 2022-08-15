@@ -114,6 +114,12 @@ textarea {
     align-items: center
 }
 
+.flex__evently{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly
+}
+
 
 .card{
     display: flex;
