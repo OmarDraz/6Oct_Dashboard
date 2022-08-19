@@ -7,7 +7,7 @@ import axiosInstance from '../axios'
 import ReactPlayer from 'react-player'
 import {motion} from 'framer-motion'
 
-const socket = io.connect('http://localhost:3001')
+const socket = io.connect(`${process.env.REACT_APP_HOST_API}`)
 
 const Welcome = () => {
   const [name, setName] = useState();

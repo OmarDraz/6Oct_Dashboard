@@ -15,7 +15,7 @@ const RegisterForm = () => {
 
     const [messages, setMessages] = useState([])
 
-    const socket = io.connect('http://localhost:3001')
+    const socket = io.connect(`${process.env.REACT_APP_HOST_API}`)
 
     const handleChange = (e) => {
         const {name, value} = e.target

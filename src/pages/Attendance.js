@@ -7,7 +7,7 @@ import Modal from '../components/modal/Modal';
 import {MdCancel} from 'react-icons/md'
 import axiosInstance from '../axios';
 
-const socket = io.connect("http://localhost:3001")
+const socket = io.connect(`${process.env.REACT_APP_HOST_API}`)
 
 const Attendance = () => {
   const [attendees, setAttendees] = useState([])
