@@ -25,7 +25,7 @@ const WelcomeMedia = () => {
             }
         }
 
-        const URL = 'http://localhost:3001/api/media/update_image'
+        const URL = `${process.env.REACT_APP_HOST_API}media/update_image`
         axios.post(URL, formData, config).then((res) => {
             alert(res.data.message)
             setMedia({
@@ -47,7 +47,7 @@ const WelcomeMedia = () => {
             }
         }
 
-        const URL = 'http://localhost:3001/api/media/update_video'
+        const URL = `${process.env.REACT_APP_HOST_API}media/update_video`
         axios.post(URL, formData, config).then((res) => {
             alert(res.data.message)
             setMedia({

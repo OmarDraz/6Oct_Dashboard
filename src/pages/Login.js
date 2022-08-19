@@ -18,6 +18,7 @@ export const Login = () => {
     }
 
     const [validation, setValidation] = useState('')
+    console.log(process.env)
     const onSubmit = (e) => {
         e.preventDefault();
         axiosInstance.post('users/login', login).then((res) => {

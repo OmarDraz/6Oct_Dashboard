@@ -38,7 +38,7 @@ const Categories = () => {
             }
         }
 
-        const URL = `http://localhost:3001/api/categories/update_category/${+category.id}`
+        const URL = `${process.env.REACT_APP_HOST_API}categories/update_category/${+category.id}`
         axios.put(URL, formData, config).then((res) => {
             alert(res.data.message)
             console.log(res)
@@ -139,7 +139,7 @@ const Categories = () => {
                         <input type="file" name="image" onChange={handleImage} id="name" />
                         {
                             selected.image && (
-                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split('${process.env.HOST}/uploads/')}</a></p>
+                                <p>الحالي <a rel="noreferrer" target="_blank" href={selected.image}>{selected.image.split(`${process.env.REACT_APP_HOST_API}/uploads/`)}</a></p>
                             )
                         }
                     </div>

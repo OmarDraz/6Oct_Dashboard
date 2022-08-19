@@ -9,7 +9,7 @@ import Logout from './components/logout';
 import Welcome from './pages/Welcome';
 function App() {
   useEffect(() => {
-    if(!Cookie.get('name') && window.location.href !== 'http://localhost:3006/login'){
+    if(!Cookie.get('name') && window.location.href !== `${process.env.REACT_APP_DOMAIN}/login`){
       window.location.href = "/login"
         }
   },[])

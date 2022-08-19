@@ -54,7 +54,7 @@ const EditProduct = () => {
             }
         }
 
-        const URL = `http://localhost:3001/api/products/update_product/${+id}`
+        const URL = `${process.env.REACT_APP_HOST_API}products/update_product/${+id}`
         axios.put(URL, formData, config).then((res) => {
             alert(res.data.message)
             setProduct({

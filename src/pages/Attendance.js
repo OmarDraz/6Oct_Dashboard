@@ -6,16 +6,11 @@ import notificationSound from '../assets/audio/Notification.mp3'
 import Modal from '../components/modal/Modal';
 import {MdCancel} from 'react-icons/md'
 import axiosInstance from '../axios';
-import { useNavigate } from 'react-router-dom'
 
 const socket = io.connect("http://localhost:3001")
 
 const Attendance = () => {
-  const navigate = useNavigate()
   const [attendees, setAttendees] = useState([])
-  const [selected, setSelected] = useState({
-    name: ''
-  });
   const [welcomeModal, setWelcomeModal] = useState(false)
 
   const [notificationSplay] = useSound(notificationSound)
@@ -40,10 +35,6 @@ useEffect(() => {
           attendees.map((a) => (
           <div style={{ flexDirection: 'column' }} onClick={() => {
             setWelcomeModal(true)
-            setSelected({
-              name: a.name,
-              id: a.id
-            })
             socket.emit('welcome', a.name)
 
           }} className='box col-3 col-sm-12'>

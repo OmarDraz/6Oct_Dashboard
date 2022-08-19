@@ -35,7 +35,7 @@ const AddCategory = () => {
             }
         }
 
-        const URL = 'http://localhost:3001/api/categories/add_category'
+        const URL = `${process.env.REACT_APP_HOST_API}categories/add_category`
         axios.post(URL, formData, config).then((res) => {
             alert(res.data.message)
             setCategory({

@@ -49,7 +49,7 @@ const AddProduct = () => {
             }
         }
 
-        const URL = 'http://localhost:3001/api/products/add_product'
+        const URL = `${process.env.REACT_APP_HOST_API}products/add_product`
         axios.post(URL, formData, config).then((res) => {
             alert(res.data.message)
             setProduct({
