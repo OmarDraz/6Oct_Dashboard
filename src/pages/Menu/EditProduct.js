@@ -116,7 +116,7 @@ const EditProduct = () => {
                 <label for="name">صورة المنتج</label> &nbsp;
                 <input type="file" name="image" onChange={handleImage} id="name" />
             </div>
-            <p>الحالي <a rel="noreferrer" target="_blank" href={currentImg}>{currentImg.split('${process.env.HOST}/uploads/')}</a></p>
+            <p>الحالي <a rel="noreferrer" target="_blank" href={currentImg}>{currentImg.split(`${process.env.REACT_APP_HOST_API}/uploads/`)}</a></p>
         </div>
         <div className="col-6 col-sm-12">
             <div className="form-group">
