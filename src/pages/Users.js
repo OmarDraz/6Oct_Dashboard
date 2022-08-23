@@ -28,6 +28,7 @@ const Users = () => {
     const {name, value} = e.target
     setUser({...user, [name]: value})
   }
+
   const [addModal, setAddModal] = useState(false)
   const [deleteModal, setDeleteModal] = useState(false)
   const [editModal, setEditModal] = useState(false)

@@ -18,7 +18,6 @@ export const Login = () => {
     }
 
     const [validation, setValidation] = useState('')
-    console.log(process.env)
     const onSubmit = (e) => {
         e.preventDefault();
         axiosInstance.post('users/login', login).then((res) => {
@@ -29,6 +28,8 @@ export const Login = () => {
                     navigate('/register')
                 }  else if (res.data.data.role === 'waiter'){
                     navigate('/attendance')
+                } else {
+                    navigate('/')
                 }
             } else {
                 setValidation(res.data.message)

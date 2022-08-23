@@ -72,7 +72,7 @@ const AddProduct = () => {
     <div>
       <div className='flex__between'>
         <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>أضف منتج جديد</motion.h3>
-        <Button text="عرض القائمة" />
+        <Button onClick={() => window.location.href = process.env.REACT_APP_MENU_DOMAIN} text="عرض القائمة" />
       </div>  
       <motion.form initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className="row" onSubmit={handleSubmit}>
         <div className="col-5 col-sm-12" style={{ display: 'flex', flexDirection: 'column' }}>

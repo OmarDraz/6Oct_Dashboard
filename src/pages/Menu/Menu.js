@@ -14,6 +14,9 @@ const Menu = () => {
         <div onClick={() => navigate('/menu/add_product')} className='box col-3 col-sm-12'>
           <span>أضف منتج</span>
         </div>
+        <div onClick={() => navigate('/menu/categories')} className='box col-3 col-sm-12'>
+          <span>الاصناف</span>
+        </div>
       </motion.div>
     </motion.div>
   )

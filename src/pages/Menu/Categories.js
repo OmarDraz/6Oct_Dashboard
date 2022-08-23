@@ -61,7 +61,10 @@ const Categories = () => {
   }
   return (
     <div>
-        <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>الاصناف</motion.h3>
+        <div style={{ width: '72%' }} className='flex__between'>
+            <motion.h3 initial={{ x: 30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className='heading'>أضف منتج جديد</motion.h3>
+            <Button onClick={() => navigate('/menu/add_category')} text="أضف صنف +" />
+        </div>  
         <motion.div initial={{ x: -30 }} animate={{ x: 0 }} transition={{ duration: .5 }} className="row">
             {
                 categories.length > 0 ?
