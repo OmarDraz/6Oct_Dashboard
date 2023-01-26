@@ -15,19 +15,19 @@ const routes = [
     path: '/',
     name: 'الرئيسية',
     icon: <FaHome />,
-    hide: Cookies.get('role') === 'admin' ? false : true
+    hide: Cookies.get('role') === 'admin' ? true : false
   },
   {
     path: '/menu',
     name: 'القائمة',
     icon: <IoIosCafe />,
-    hide: Cookies.get('role') === 'admin' ? false : true
+    hide: Cookies.get('role') === 'admin' ? true : false
   },
   {
     path: '/users',
     name: 'المستخدمين',
     icon: <HiUsers />,
-    hide: Cookies.get('role') === 'admin' ? false : true
+    hide: Cookies.get('role') === 'admin' ? true : false
   },
   {
     path: '/attendance',
@@ -38,7 +38,7 @@ const routes = [
     path: '/welcome_media',
     name: 'الترحيب',
     icon: <MdBackHand />,
-    hide: Cookies.get('role') === 'admin' ? false : true
+    hide: Cookies.get('role') === 'admin' ? true : false
   }
 ]
 
